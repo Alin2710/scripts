@@ -98,6 +98,7 @@ end
 labels = setmetatable({
     text = {label = tab1:AddLabel("")},
     tfarm = {label = tab1:AddLabel("")},
+    hp = {label = tab1:AddLabel("")},
     space = {label = tab1:AddLabel("")},
     Quest = {prefix = "Current Quest: ", label = tab1:AddLabel("Current Quest: None")},
     Yen = {prefix = "Yen: ", label = tab1:AddLabel("Yen: 0"), value = 0, oldval = player.PlayerFolder.Stats.Yen.Value},
@@ -503,7 +504,7 @@ while true do
                     end
 
                     labels("text", "Killing: "..npc.Name)
-                    labels("text", "Hp del monke: "..npc.Name)
+                    labels("hp", "Hp del monke: "..player.Character.Humanoid.Health)
                     
                     reached = true
 
