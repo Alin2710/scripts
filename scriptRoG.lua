@@ -27,6 +27,12 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/Alin27
         C = false,
         R = false
     },
+    SkillsNPC = {
+        E = false,
+        F = false,
+        C = false,
+        R = false
+    },
     Boss = {
         ["Gyakusatsu"] = false,
         ["Eto Yoshimura"] = false,
@@ -246,13 +252,13 @@ for i,v in pairs(array.skills) do
     end):Set(myData:Get("Skills")[i])
 end
 
--- for i,v in pairs(array.skills) do
---     tab5:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
---         local skillstable = myData:Get("Skills")
---         skillstable[i] = bool
---         myData:Set("Skills", skillstable)
---     end):Set(myData:Get("Skills")[i])
--- end
+for i,v in pairs(array.skills) do
+    tab5:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
+        local skillstableNPC = myData:Get("Skills")
+        skillstableNPC[i] = bool
+        myData:Set("SkillsNPC", skillstableNPC)
+    end):Set(myData:Get("SkillsNPC")[i])
+end
 
 do
     local count = 0
@@ -516,7 +522,7 @@ while true do
                                 player.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame + npc.HumanoidRootPart.CFrame.lookVector * myData:Get("DistanceFromNpc") 
                             end
                             if player.PlayerFolder.CanAct.Value then
-                                for x,y in pairs(myData:Get("Skills")) do
+                                for x,y in pairs(myData:Get("SkillsNPC")) do
                                     if player.PlayerFolder.CanAct.Value and y and array.skills[x].Value ~= "DownTime" then
                                         pressKey(x)
                                     end
