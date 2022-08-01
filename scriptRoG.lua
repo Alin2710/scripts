@@ -31,7 +31,8 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/Alin27
         E = false,
         F = false,
         C = false,
-        R = false
+        R = false,
+        G = false
     },
     Boss = {
         ["Gyakusatsu"] = false,
