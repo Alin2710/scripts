@@ -64,7 +64,8 @@ local array = {
         E = player.PlayerFolder.Special1CD,
         F = player.PlayerFolder.Special3CD,
         C = player.PlayerFolder.SpecialBonusCD,
-        R = player.PlayerFolder.Special2CD
+        R = player.PlayerFolder.Special2CD,
+        G = player.PlayerFolder.SpecialBonusCD
     }
 }
 
