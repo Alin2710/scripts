@@ -483,12 +483,8 @@ while true do
 
                 local npc = getNPC()
 
-                file = io.open("C:\\Users\\alina\\Desktop\\debug.txt", "a")
-                file:write("hello", "\n")
-                -- file:write(CurrentPressure, "\n")
-                file:close()
 
-                --labels("hp", "Hp del monke: "..npc)
+                
 
                 if npc then
                     array.found = false
