@@ -1,6 +1,6 @@
 local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Alin2710/scripts/main/boh.lua"))():AddWindow("Ro-Ghoul", {
     main_color = Color3.fromRGB(0,0,0),
-    min_size = Vector2.new(373, 340),
+    min_size = Vector2.new(373, 540),
     can_resize = true
 })
 
