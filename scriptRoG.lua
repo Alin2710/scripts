@@ -518,11 +518,7 @@ while true do
                             if player.PlayerFolder.CanAct.Value then
                                 pressKey("Mouse1")
 
-                                for x,y in pairs(myData:Get("Skills")) do
-                                    if player.PlayerFolder.CanAct.Value and y and array.skills[x].Value ~= "DownTime" then
-                                        pressKey(x)
-                                    end
-                                end
+                                
 
                             end
                             task.wait()
