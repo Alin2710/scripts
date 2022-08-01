@@ -504,7 +504,7 @@ while true do
                     end
 
                     labels("text", "Killing: "..npc.Name)
-                    labels("hp", "Hp del monke: "..npc.Health)
+                    --labels("hp", "Hp del monke: "..npc.Health)
                     
                     reached = true
 
