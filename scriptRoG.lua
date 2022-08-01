@@ -246,13 +246,7 @@ for i,v in pairs(array.skills) do
     end):Set(myData:Get("Skills")[i])
 end
 
-for i,v in pairs(array.skills) do
-    tab5:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
-        local skillstable = myData:Get("Skills")
-        skillstable[i] = bool
-        myData:Set("Skills", skillstable)
-    end):Set(myData:Get("Skills")[i])
-end
+
 
 do
     local count = 0
