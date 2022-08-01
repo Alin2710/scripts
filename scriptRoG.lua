@@ -1,4 +1,4 @@
-local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Alin2710/scripts/main/boh.lua?token=GHSAT0AAAAAABXGMBFPCTMSUF53HBWFWYOSYXIAGMQ"))():AddWindow("Ro-Ghoul", {
+local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Alin2710/scripts/main/boh.lua?token=GHSAT0AAAAAABXGMBFPO2YQNRTC73FG7BA6YXIBAPQ"))():AddWindow("Ro-Ghoul", {
     main_color = Color3.fromRGB(0,0,0),
     min_size = Vector2.new(373, 340),
     can_resize = false
@@ -20,7 +20,7 @@ repeat wait() until player:FindFirstChild("PlayerFolder")
 local team, remotes, stat = player.PlayerFolder.Customization.Team.Value, get.ReplicatedStorage.Remotes, player.PlayerFolder.StatsFunction
 local oldtick, farmtick = 0, 0
 local camera = workspace.CurrentCamera
-local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/Alin2710/scripts/main/settings.lua?token=GHSAT0AAAAAABXGMBFORUE2CHJJSLAB2POAYXIAGNQ"))().new("Ro-Ghoul Autofarm", {
+local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/Alin2710/scripts/main/settings.lua?token=GHSAT0AAAAAABXGMBFO2DTFVYWFBJUUDNGUYXIBA5Q"))().new("Ro-Ghoul Autofarm", {
     Skills = {
         E = false,
         F = false,
@@ -246,6 +246,13 @@ for i,v in pairs(array.skills) do
     end):Set(myData:Get("Skills")[i])
 end
 
+for i,v in pairs(array.skills) do
+    tab4:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
+        local skillstable = myData:Get("Skills")
+        skillstable[i] = bool
+        myData:Set("Skills", skillstable)
+    end):Set(myData:Get("Skills")[i])
+end
 
 do
     local count = 0
