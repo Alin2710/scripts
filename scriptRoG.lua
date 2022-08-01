@@ -483,6 +483,9 @@ while true do
 
                 local npc = getNPC()
 
+
+                labels("hp", "Hp del monke: "..npc)
+
                 if npc then
                     array.found = false
                     local reached = false
