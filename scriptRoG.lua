@@ -504,7 +504,7 @@ while true do
                     end
 
                     labels("text", "Killing: "..npc.Name)
-                    labels("hp", "Hp del monke: "..player.Character.Humanoid.Health)
+                    labels("hp", "Hp del monke: "..npc.humanoid.Health)
                     
                     reached = true
 
