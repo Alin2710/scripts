@@ -1,6 +1,6 @@
 local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Alin2710/scripts/main/boh.lua"))():AddWindow("Ro-Ghoul", {
     main_color = Color3.fromRGB(0,0,0),
-    min_size = Vector2.new(373, 540),
+    min_size = Vector2.new(473, 340),
     can_resize = true
 })
 
@@ -516,6 +516,11 @@ while true do
                                 player.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame + npc.HumanoidRootPart.CFrame.lookVector * myData:Get("DistanceFromNpc") 
                             end
                             if player.PlayerFolder.CanAct.Value then
+                                for x,y in pairs(myData:Get("Skills")) do
+                                    if player.PlayerFolder.CanAct.Value and y and array.skills[x].Value ~= "DownTime" then
+                                        pressKey(x)
+                                    end
+                                end
                                 pressKey("Mouse1")
                             end
                             task.wait()
