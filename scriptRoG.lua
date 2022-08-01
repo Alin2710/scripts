@@ -496,7 +496,7 @@ while true do
                     end)()
 
                     labels("text", "Moving to: "..npc.Name)
-                    player.Character.Humanoid.Health = 10000
+                    --player.Character.Humanoid.Health = 10000
 
                     if myData:Get("Boss")[npc.Name] or npc.Parent.Name == "GyakusatsuSpawn" then
                         tp(npc.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90),0,0) + Vector3.new(0,myData:Get("DistanceFromBoss"),0))
