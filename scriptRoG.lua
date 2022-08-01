@@ -502,7 +502,8 @@ while true do
                         tp(npc.HumanoidRootPart.CFrame + npc.HumanoidRootPart.CFrame.lookVector * myData:Get("DistanceFromNpc"))
                     end
 
-                    labels("text", "Killing: "..npc.Name .. "Hp del monkas: " .. Character.Humanoid.Health)
+                    labels("text", "Killing: "..npc.Name)
+                    labels("text", "Hp del monke: "..player.Character.Humanoid.Health)
                     
                     reached = true
 
