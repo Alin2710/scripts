@@ -1,7 +1,7 @@
 local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Alin2710/scripts/main/boh.lua"))():AddWindow("Ro-Ghoul", {
     main_color = Color3.fromRGB(0,0,0),
     min_size = Vector2.new(373, 340),
-    can_resize = false
+    can_resize = true
 })
 
 local get = setmetatable({}, {
@@ -10,7 +10,7 @@ local get = setmetatable({}, {
     end
 })
 
-local tab1, tab2, tab3, tab4 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc")
+local tab1, tab2, tab3, tab4, tab5 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc"), gui:AddTab("Skills")
 local btn, btn2, btn3, key, nmc, trainers, labels
 local findobj, findobjofclass, waitforobj, fire, invoke = get.FindFirstChild, get.FindFirstChildOfClass, get.WaitForChild, Instance.new("RemoteEvent").FireServer, Instance.new("RemoteFunction").InvokeServer
 local player = get.Players.LocalPlayer
@@ -246,7 +246,13 @@ for i,v in pairs(array.skills) do
     end):Set(myData:Get("Skills")[i])
 end
 
-
+for i,v in pairs(array.skills) do
+    tab5:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
+        local skillstable = myData:Get("Skills")
+        skillstable[i] = bool
+        myData:Set("Skills", skillstable)
+    end):Set(myData:Get("Skills")[i])
+end
 
 do
     local count = 0
