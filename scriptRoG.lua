@@ -10,7 +10,7 @@ local get = setmetatable({}, {
     end
 })
 
-local tab1, tab2, tab3, tab4 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc")
+local tab1, tab2, tab3, tab4, tab5 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc"), gui:AddTab("Skills on npcs")
 local btn, btn2, btn3, key, nmc, trainers, labels
 local findobj, findobjofclass, waitforobj, fire, invoke = get.FindFirstChild, get.FindFirstChildOfClass, get.WaitForChild, Instance.new("RemoteEvent").FireServer, Instance.new("RemoteFunction").InvokeServer
 local player = get.Players.LocalPlayer
@@ -247,7 +247,7 @@ for i,v in pairs(array.skills) do
 end
 
 for i,v in pairs(array.skills) do
-    tab4:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
+    tab5:AddSwitch("Auto use "..i.." skill (on npcs)", function(bool)
         local skillstable = myData:Get("Skills")
         skillstable[i] = bool
         myData:Set("Skills", skillstable)
